@@ -9,20 +9,21 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
+    <div class="banner">
+      <h1>Recipe Finder</h1>
+    </div>
     <div class="container">
-      <h1>Recipe finder</h1>
-
       <form id="js-form">
         <label for="search-term">Search Recipe</label>
         <input type="text" name="search-term" id="recipe-search" required />
 
         <input type="submit" value="Go!" />
       </form>
-
+    </div>
+    <div class="resultDiv">
       <p id="js-error-message" class="error-message"></p>
       <section id="results" class="hidden">
-        <h2>Recipes</h2>
-        <ul id="results-list"></ul>
+        <div id="results-list"></div>
       </section>
     </div>
     <script

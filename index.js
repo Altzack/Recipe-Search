@@ -47,6 +47,7 @@ function getRecipe() {
 function displayResults(data) {
   $("#results-list").empty();
   for (let i = 0; i < data.hits.length; i++) {
+    let calories = Math.round(data.hits[i].recipe.calories);
     $("#results-list").append(`
     <div class="panel">
     <div class="heading">
@@ -55,8 +56,12 @@ function displayResults(data) {
     <div class="heading">
     <img class="image" src=${data.hits[i].recipe.image}     />
   </div>
-    <div class="title">
-    <ul class="calories">${data.hits[i].recipe.calories}</ul>
+    <div class="heading">
+    <span id='calories'>Calories: ${calories}</span>
+    <span class="title">Servings: ${data.hits[i].recipe.yield}</span>
+    <a href="${data.hits[i].recipe.url}">See the recipe!</a>
+
+    </div>
     </div>`);
   }
   $("#results").removeClass("hidden");
